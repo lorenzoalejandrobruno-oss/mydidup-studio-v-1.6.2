@@ -1,4 +1,4 @@
-const CACHE_NAME = 'didup-cache-v34'; // Fix proporzioni iPhone Home e testo assenze
+const CACHE_NAME = 'didup-cache-v35'; // Fix Grid MinMax e allargamento post-login
 const ASSETS = [
     './',
     './index.html',

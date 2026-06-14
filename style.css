@@ -1013,7 +1013,7 @@ main { overflow-y: auto !important; } /* Ripristina lo scorrimento del contenuto
     /* Rimpicciolimento rettangoli Home per evitare scorrimento */
     .stats-top-row {
         display: grid !important;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* Forza il contenimento */
         gap: 10px;
         overflow: hidden;
         min-height: auto;

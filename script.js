@@ -2,10 +2,19 @@
  * Versione corrente dell'applicazione.
  * Utilizzata per mostrare notifiche di aggiornamento.
  */
-const CURRENT_VERSION = "1.6.7";
+const CURRENT_VERSION = "1.6.8";
 
 /** Cronologia centralizzata delle novità per l'automazione della UI */
 const APP_NEWS_HISTORY = [
+    { 
+        v: "1.6.8", 
+        date: "Oggi", 
+        news: [
+            "Fix iPhone: Forzato il contenimento dei rettangoli della Home (minmax grid) per impedire l'allargamento post-login.",
+            "UI: Ottimizzata la gestione degli spazi nell'header per nomi utente lunghi provenienti dal cloud.",
+            "System: Incrementata versione cache a v35 per riflettere le modifiche strutturali."
+        ]
+    },
     { 
         v: "1.6.7", 
         date: "Oggi", 
