@@ -1,4 +1,4 @@
-const CACHE_NAME = 'didup-cache-v29'; // Ripristino omino
+const CACHE_NAME = 'didup-cache-v32'; // Sostituzione materie e UI Bottom Nav
 const ASSETS = [
     './',
     './index.html',

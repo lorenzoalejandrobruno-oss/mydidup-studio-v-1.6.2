@@ -2,10 +2,37 @@
  * Versione corrente dell'applicazione.
  * Utilizzata per mostrare notifiche di aggiornamento.
  */
-const CURRENT_VERSION = "1.6.2";
+const CURRENT_VERSION = "1.6.5";
 
 /** Cronologia centralizzata delle novità per l'automazione della UI */
 const APP_NEWS_HISTORY = [
+    { 
+        v: "1.6.5", 
+        date: "Oggi", 
+        news: [
+            "Curriculum: Dal 2° anno, Storia e Geografia viene sostituita da Storia e Filosofia.",
+            "UI: Alzata la barra di navigazione su iPhone per migliorare l'ergonomia.",
+            "System: Incrementata versione cache a v32 per l'aggiornamento dei dati."
+        ]
+    },
+    { 
+        v: "1.6.4", 
+        date: "Oggi", 
+        news: [
+            "Fix iPhone: Ottimizzato l'header per evitare bug di proporzioni dopo il login con nomi lunghi.",
+            "UI: I pulsanti di sistema ora diventano icone compatte su dispositivi mobili.",
+            "System: Incrementata versione cache a v31."
+        ]
+    },
+    { 
+        v: "1.6.3", 
+        date: "Oggi", 
+        news: [
+            "UI/UX: Ottimizzazione massiva delle proporzioni per iPhone e dispositivi mobile.",
+            "System: Migliorato il supporto alle Safe Areas (Notch) di iOS.",
+            "Branding: Affinamento icone e spaziature nella dashboard."
+        ]
+    },
     { 
         v: "1.6.2", 
         date: "Oggi", 
@@ -212,6 +239,24 @@ function ensureSpecialSubjects() {
             }
         }
     });
+
+    // Sostituzione Storia/Geografia -> Storia + Filosofia dal 2° anno
+    if (parseInt(currentTredYear) >= 2) {
+        const sgIndex = schoolData.findIndex(s => s.name.toUpperCase() === "STORIA E GEOGRAFIA");
+        if (sgIndex !== -1) {
+            schoolData.splice(sgIndex, 1);
+            changed = true;
+        }
+        if (!schoolData.some(s => s.name.toUpperCase() === "STORIA")) {
+            schoolData.push({ id: 13, name: "STORIA", target: 6, color: "#5AC8FA", grades: [], scrutinio: { primo: { voto: '-', assenze: 0, previsione: null }, secondo: { voto: '-', assenze: 0, previsione: null } } });
+            changed = true;
+        }
+        if (!schoolData.some(s => s.name.toUpperCase() === "FILOSOFIA")) {
+            schoolData.push({ id: 14, name: "FILOSOFIA", target: 6, color: "#A21CAF", grades: [], scrutinio: { primo: { voto: '-', assenze: 0, previsione: null }, secondo: { voto: '-', assenze: 0, previsione: null } } });
+            changed = true;
+        }
+    }
+
     if (changed) {
         localStorage.setItem(getTredKey('myDidupDataDesktop'), JSON.stringify(schoolData));
     }
@@ -227,6 +272,7 @@ function sortSubjectsOfficially(data) {
         if (n.includes("ITALIANO") || n.includes("LETTERATURA ITALIANA")) return 1;
         if (n.includes("INGLESE")) return 2;
         if (n.includes("STORIA") || n.includes("GEOGRAFIA")) return 3;
+        if (n.includes("FILOSOFIA")) return 3.5;
         if (n.includes("MATEMATICA")) return 4;
         if (n.includes("FISICA")) return 5;
         if (n.includes("INFORMATICA")) return 6;
