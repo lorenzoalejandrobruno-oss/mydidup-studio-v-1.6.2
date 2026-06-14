@@ -229,7 +229,7 @@ body.sidebar-open .sidebar { left: 0; }
     display: flex; 
     justify-content: space-around; 
     align-items: center; 
-    z-index: 1600;
+    z-index: 1800; /* Superiore al menu overlay (1700) per restare sempre visibile */
     border-radius: 28px;
     transition: background-color var(--transition-speed), border-color var(--transition-speed);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
@@ -993,6 +993,9 @@ main { overflow-y: auto !important; } /* Ripristina lo scorrimento del contenuto
     /* Compattazione pulsanti header su iPhone */
     .header-flex-container .btn-accent {
         padding: 8px 10px;
+    }
+    .header-actions-mobile {
+        flex-shrink: 0; /* Impedisce ai pulsanti di restringersi */
     }
     .header-flex-container .btn-accent span:last-child {
         display: none; /* Nasconde "RESET" e "REFRESH" per salvare spazio */

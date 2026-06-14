@@ -1,4 +1,4 @@
-const CACHE_NAME = 'didup-cache-v32'; // Sostituzione materie e UI Bottom Nav
+const CACHE_NAME = 'didup-cache-v34'; // Fix proporzioni iPhone Home e testo assenze
 const ASSETS = [
     './',
     './index.html',

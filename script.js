@@ -2,10 +2,28 @@
  * Versione corrente dell'applicazione.
  * Utilizzata per mostrare notifiche di aggiornamento.
  */
-const CURRENT_VERSION = "1.6.5";
+const CURRENT_VERSION = "1.6.7";
 
 /** Cronologia centralizzata delle novità per l'automazione della UI */
 const APP_NEWS_HISTORY = [
+    { 
+        v: "1.6.7", 
+        date: "Oggi", 
+        news: [
+            "Fix iPhone: Risolto il problema di ridimensionamento dei rettangoli della Home dopo il login.",
+            "UI: Reso visibile il testo 'Totale ore assenza' su iPhone, con dimensioni ottimizzate.",
+            "System: Incrementata versione cache a v34 per l'aggiornamento degli asset."
+        ]
+    },
+    { 
+        v: "1.6.6", 
+        date: "Oggi", 
+        news: [
+            "UI: La barra di navigazione rimane ora visibile sopra il menu per una navigazione più rapida.",
+            "UX: Migliorata la gestione dei livelli (z-index) tra i componenti di sistema.",
+            "System: Incrementata versione cache a v33."
+        ]
+    },
     { 
         v: "1.6.5", 
         date: "Oggi", 
