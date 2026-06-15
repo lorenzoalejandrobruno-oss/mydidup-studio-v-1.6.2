@@ -2,10 +2,27 @@
  * Versione corrente dell'applicazione.
  * Utilizzata per mostrare notifiche di aggiornamento.
  */
-const CURRENT_VERSION = "1.7.0";
+const CURRENT_VERSION = "1.7.2";
 
 /** Cronologia centralizzata delle novità per l'automazione della UI */
 const APP_NEWS_HISTORY = [
+    { 
+        v: "1.7.2", 
+        date: "Oggi", 
+        news: [
+            "UI: Corretto il layout della card unica mantenendo le disposizioni originali dei blocchi.",
+            "System: Incrementata versione cache a v39."
+        ]
+    },
+    { 
+        v: "1.7.1", 
+        date: "Oggi", 
+        news: [
+            "UI: Unite le card 'Media Generale' e 'Rapporto Presenze' in un'unica card più grande nella Home.",
+            "UI: Centralizzate e ingrandite le statistiche 'Assenze', 'Ritardi' e 'Uscite' per maggiore visibilità.",
+            "System: Incrementata versione cache a v38 per il refresh degli stili."
+        ]
+    },
     { 
         v: "1.7.0", 
         date: "Oggi", 

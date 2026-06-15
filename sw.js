@@ -1,4 +1,4 @@
-const CACHE_NAME = 'didup-cache-v37'; // Fix strutturale e assenze visibili
+const CACHE_NAME = 'didup-cache-v39'; // Ripristino disposizioni originali blocchi
 const ASSETS = [
     './',
     './index.html',

@@ -139,49 +139,53 @@
             </div>
 
             <div class="stats-top-row">
-                <div class="card combined-stats-card">
-                    <div class="card-header-section" style="justify-content:center;">
-                        <div class="radial-progress-container">
-                            <div class="circle-progress-desktop">
-                                <svg viewBox="0 0 100 100">
-                                    <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
-                                    <circle class="circle-fg" id="avg-circle-stroke" cx="50" cy="50" r="45"></circle>
-                                </svg>
-                                <div class="circle-inner-value">
-                                    <span id="global-average-display">N.D.</span>
-                                    <span id="predicted-avg-display">Prev: --</span>
+                <div class="card unified-dashboard-card">
+                    <div class="unified-main-content">
+                        <!-- BLOCCO MEDIA -->
+                        <div class="dashboard-section-block">
+                            <div class="card-header-section" style="justify-content:center;">
+                                <div class="radial-progress-container">
+                                    <div class="circle-progress-desktop">
+                                        <svg viewBox="0 0 100 100">
+                                            <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
+                                            <circle class="circle-fg" id="avg-circle-stroke" cx="50" cy="50" r="45"></circle>
+                                        </svg>
+                                        <div class="circle-inner-value">
+                                            <span id="global-average-display">N.D.</span>
+                                            <span id="predicted-avg-display">Prev: --</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="average-info-section">
+                                    <h3>Media Generale</h3>
+                                    <p class="stats-subtext">Andamento complessivo</p>
+                                    <div id="home-averages-period-breakdown"></div>
+                                    <button class="btn-accent" onclick="openTargetSidebar(event)" style="margin-top:10px; padding:6px 12px; font-size:10px; font-weight:700;">🎯 ANALISI OBIETTIVO</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="average-info-section">
-                            <h3>Media Generale</h3>
-                            <p class="stats-subtext">Il tuo andamento complessivo</p>
-                            <div id="home-averages-period-breakdown"></div>
-                            <button class="btn-accent" onclick="openTargetSidebar(event)" style="margin-top:10px; padding:6px 12px; font-size:10px; font-weight:700;">🎯 ANALISI OBIETTIVO</button>
+
+                        <!-- BLOCCO PRESENZE -->
+                        <div class="dashboard-section-block text-center">
+                            <h3 style="font-size:16px; margin-bottom:15px; font-weight:800;">Rapporto Presenze</h3>
+                            <div class="pie-chart-container">
+                                <div id="attendance-pie-chart" class="pie-chart"></div>
+                                <div class="pie-legend">
+                                    <div class="legend-item"><span class="dot g-green"></span> Presenze (<span id="perc-presenze">0</span>%)</div>
+                                    <div class="legend-item"><span class="dot g-red"></span> Assenze (<span id="perc-assenze">0</span>%)</div>
+                                </div>
+                            </div>
+                            <p class="stats-subtext">Totale ore assenza: <b id="total-hours-abs">0</b>h / <span id="max-annual-hours"></span>h</p>
                         </div>
                     </div>
-
                     <hr class="card-divider">
-
-                    <div class="attendance-summary-section">
-                        <h3 style="font-size:12px; color:var(--text-sub);">STATISTICHE RAPIDE</h3>
+                    <div class="attendance-summary-section" style="text-align: center;">
+                        <h3 style="font-size:12px; color:var(--text-sub); margin-bottom:10px; text-transform: uppercase;">Eventi Appello</h3>
                         <div class="mini-stats-inline-row">
-                            <div class="mini-stat-info"><h5>Assenze</h5><p id="stat-assenze" style="font-weight:800;">0</p></div>
-                            <div class="mini-stat-info divider"><h5>Ritardi</h5><p id="stat-ritardi" style="font-weight:800;">0</p></div>
+                            <div class="mini-stat-info"><h5>Assenze</h5><p id="stat-assenze">0</p></div>
+                            <div class="mini-stat-info divider"><h5>Ritardi</h5><p id="stat-ritardi">0</p></div>
                             <div class="mini-stat-info"><h5>Uscite</h5><p id="stat-uscite">0</p></div>
                         </div>
-                    </div>
-                </div>
-                <div class="card text-center">
-                    <h3 style="font-size:16px; margin-bottom:15px; font-weight:800;">Rapporto Presenze</h3>
-                    <div class="pie-chart-container">
-                        <div id="attendance-pie-chart" class="pie-chart"></div>
-                        <div class="pie-legend">
-                            <div class="legend-item"><span class="dot g-green"></span> Presenze (<span id="perc-presenze">0</span>%)</div>
-                            <div class="legend-item"><span class="dot g-red"></span> Assenze (<span id="perc-assenze">0</span>%)</div>
-                        </div>
-                    </div>
-                        <p class="stats-subtext margin-top-10">Totale ore assenza: <b id="total-hours-abs" style="font-weight:800;">0</b>h / <span id="max-annual-hours"></span>h</p>
                 </div>
             </div>
             <div class="dashboard-grid">
