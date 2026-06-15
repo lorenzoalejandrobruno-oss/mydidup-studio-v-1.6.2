@@ -2,10 +2,18 @@
  * Versione corrente dell'applicazione.
  * Utilizzata per mostrare notifiche di aggiornamento.
  */
-const CURRENT_VERSION = "1.7.3";
+const CURRENT_VERSION = "1.7.4";
 
 /** Cronologia centralizzata delle novità per l'automazione della UI */
 const APP_NEWS_HISTORY = [
+    { 
+        v: "1.7.4", 
+        date: "Oggi", 
+        news: [
+            "Fix: Risolto il bug della scritta 'Nessun dato' persistente sui grafici.",
+            "System: Incrementata versione cache a v41 per forzare il refresh degli stili."
+        ]
+    },
     { 
         v: "1.7.3", 
         date: "Oggi", 
@@ -2088,15 +2096,24 @@ function renderSubjectLineChart(subId, grades) {
     
     if (subjectChartInstance) subjectChartInstance.destroy();
 
+    const parent = canvas.parentElement;
+    const existingPlaceholder = parent.querySelector('.empty-placeholder');
+    if (existingPlaceholder) existingPlaceholder.remove();
+
     // Filtra solo i voti numerici per il grafico
     const numericGrades = grades.filter(g => !isNaN(parseFloat(g.value)));
 
     if (numericGrades.length < 2) {
-        const parent = canvas.parentElement;
-        if(parent) parent.innerHTML = '<canvas id="single-subject-chart-canvas"></canvas><div class="empty-placeholder" style="padding:20px;">Dati insufficienti per il grafico</div>';
+        canvas.style.display = 'none';
+        const div = document.createElement('div');
+        div.className = 'empty-placeholder';
+        div.style.padding = '20px';
+        div.innerText = 'Dati insufficienti per il grafico';
+        parent.appendChild(div);
         return;
     }
-
+    canvas.style.display = 'block';
+    
     // Ordina i voti per data per il grafico
     const sortedGrades = [...numericGrades].sort((a, b) => new Date(a.date) - new Date(b.date));
     const labels = sortedGrades.map(g => new Date(g.date).toLocaleDateString('it-IT', { day: 'numeric', month: 'short' }));
@@ -2596,17 +2613,25 @@ function renderTargetAnalysisModalContent(target) {
 function drawAreaChart(bucket, has) {
     const canvas = document.getElementById('main-grades-chart');
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
 
     // Distruggi il grafico precedente se esiste per evitare sovrapposizioni
     if (mainChartInstance) mainChartInstance.destroy();
 
+    const parent = canvas.parentElement;
+    const existingPlaceholder = parent.querySelector('.empty-placeholder');
+    if (existingPlaceholder) existingPlaceholder.remove();
+
     if (!has) {
-        const parent = canvas.parentElement;
-        if(parent) parent.innerHTML = '<canvas id="main-grades-chart"></canvas><div class="empty-placeholder">Nessun dato per il grafico</div>';
+        canvas.style.display = 'none';
+        const div = document.createElement('div');
+        div.className = 'empty-placeholder';
+        div.innerText = 'Nessun dato per il grafico';
+        parent.appendChild(div);
         return;
     }
-
+    canvas.style.display = 'block';
+    const ctx = canvas.getContext('2d');
+    
     // Rilevamento colori tema
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--argo-blue-text').trim() || '#007AFF';

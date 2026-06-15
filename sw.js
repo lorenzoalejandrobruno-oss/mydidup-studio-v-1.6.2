@@ -1,4 +1,4 @@
-const CACHE_NAME = 'didup-cache-v40'; // Layout side-by-side mobile e divisore
+const CACHE_NAME = 'didup-cache-v41'; // Fix placeholder grafici
 const ASSETS = [
     './',
     './index.html',
