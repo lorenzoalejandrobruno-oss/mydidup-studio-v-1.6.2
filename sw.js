@@ -1,4 +1,4 @@
-const CACHE_NAME = 'didup-cache-v36'; // Blindaggio layout Home iPhone
+const CACHE_NAME = 'didup-cache-v37'; // Fix strutturale e assenze visibili
 const ASSETS = [
     './',
     './index.html',

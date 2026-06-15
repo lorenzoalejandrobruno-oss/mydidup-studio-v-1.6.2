@@ -2,10 +2,19 @@
  * Versione corrente dell'applicazione.
  * Utilizzata per mostrare notifiche di aggiornamento.
  */
-const CURRENT_VERSION = "1.6.9";
+const CURRENT_VERSION = "1.7.0";
 
 /** Cronologia centralizzata delle novità per l'automazione della UI */
 const APP_NEWS_HISTORY = [
+    { 
+        v: "1.7.0", 
+        date: "Oggi", 
+        news: [
+            "Fix Definitivo iPhone: Blindatura strutturale delle card per impedire deformazioni post-login.",
+            "UI: Ottimizzato il padding e il contenimento dei testi per nomi utente lunghi.",
+            "System: Incrementata versione cache a v37 per forzare il refresh degli stili."
+        ]
+    },
     { 
         v: "1.6.9", 
         date: "Oggi", 
