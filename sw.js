@@ -1,4 +1,4 @@
-const CACHE_NAME = 'didup-cache-v35'; // Fix Grid MinMax e allargamento post-login
+const CACHE_NAME = 'didup-cache-v36'; // Blindaggio layout Home iPhone
 const ASSETS = [
     './',
     './index.html',
