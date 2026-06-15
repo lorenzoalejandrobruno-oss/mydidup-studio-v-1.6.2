@@ -2,10 +2,19 @@
  * Versione corrente dell'applicazione.
  * Utilizzata per mostrare notifiche di aggiornamento.
  */
-const CURRENT_VERSION = "1.7.2";
+const CURRENT_VERSION = "1.7.3";
 
 /** Cronologia centralizzata delle novità per l'automazione della UI */
 const APP_NEWS_HISTORY = [
+    { 
+        v: "1.7.3", 
+        date: "Oggi", 
+        news: [
+            "UI: Aggiunta linea divisoria verticale nella card dashboard.",
+            "UI: Ottimizzato il layout Home su mobile per rispecchiare la versione PC (side-by-side).",
+            "System: Incrementata versione cache a v40."
+        ]
+    },
     { 
         v: "1.7.2", 
         date: "Oggi", 

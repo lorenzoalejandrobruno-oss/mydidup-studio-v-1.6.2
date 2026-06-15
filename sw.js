@@ -1,4 +1,4 @@
-const CACHE_NAME = 'didup-cache-v39'; // Ripristino disposizioni originali blocchi
+const CACHE_NAME = 'didup-cache-v40'; // Layout side-by-side mobile e divisore
 const ASSETS = [
     './',
     './index.html',
